@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card p-5">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="username" class="form-control" id="username"
+                            name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="password" class="form-control" id="password"
+                            name="password">
+                    </div>
+                    <div *ngIf="showError" class="form-group">
+                        <label class="text-danger">Invalid Username or Password</label>
+                    </div>
+                    <button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()"
+                        class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
